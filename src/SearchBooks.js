@@ -1,9 +1,13 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import BookCategory from './BookCategory'
 import * as BooksAPI from './BooksAPI'
 
 class SearchBooks extends Component {
+  static propTypes = {
+    onUpdateShelf: PropTypes.func.isRequired
+  }
   state = {
     query: '',
     showingBooks: []
@@ -12,17 +16,24 @@ class SearchBooks extends Component {
     this.setState({query: query.trim()})
     let thisQuery = this.state.query
     if (thisQuery) {
-      BooksAPI.search(thisQuery, 20).then(books => {
-        this.setState({ showingBooks: !books.error ? books : []})
+      BooksAPI.search(thisQuery, 20).then(result => {
+        if (result || !result.error) {
+          result.map((book) => {
+            let bookInShelf = this.props.books.find(mainBook => mainBook.id === book.id);
+            book.shelf = bookInShelf ? bookInShelf.shelf : book.shelf;
+            return book;
+          });
+
+          this.setState({showingBooks: result})
+        } else {
+          this.setState({showingBooks: []})
+        }
       })
     } else {
-      this.setState({ showingBooks: [] })
+      this.setState({showingBooks: []})
     }
   }
 
-  clearQuery = () => {
-    this.setState({query: ''})
-  }
   render() {
     const {onUpdateShelf} = this.props
     const {query, showingBooks} = this.state
@@ -47,9 +58,7 @@ class SearchBooks extends Component {
             </div>
           </div>
           <div className="search-books-results">
-            {query && (
-              <BookCategory filteredBooks={showingBooks} category={'none'} onUpdate={onUpdateShelf} />
-            )}
+            {query && (<BookCategory filteredBooks={showingBooks} category={'none'} onUpdate={onUpdateShelf}/>)}
           </div>
         </div>
 

@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class BookCategory extends Component {
+  static propTypes = {
+    filteredBooks: PropTypes.array.isRequired,
+    category: PropTypes.string.isRequired,
+    onUpdate: PropTypes.func.isRequired
+  }
   render() {
     const {filteredBooks, category, onUpdate} = this.props
 

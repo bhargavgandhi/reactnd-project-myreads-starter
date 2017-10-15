@@ -1,8 +1,14 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import BookCategory from './BookCategory'
 
 class ListBooks extends Component {
+
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    onUpdateShelf: PropTypes.func.isRequired
+  }
   render() {
     const {books, onUpdateShelf} = this.props
 
@@ -32,7 +38,7 @@ class ListBooks extends Component {
             {booksCategories.map((category) => (
               <div key={category.catID} className="bookshelf">
                 <h2 className="bookshelf-title">{category.catTitle}</h2>
-                <BookCategory filteredBooks={books} category={category.catValue} onUpdate={onUpdateShelf} />
+                <BookCategory filteredBooks={books} category={category.catValue} onUpdate={onUpdateShelf}/>
               </div>
             ))}
           </div>
