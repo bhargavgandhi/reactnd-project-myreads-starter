@@ -1,14 +1,7 @@
 # reactnd-project-myreads
 This is myreads project from Udacity, I have added my files/functions to the project.
 
-## Table of contents
-- [Getting Started](#getting-started)
-- [Live Demo](#demo)
-- [Documentation](#documentation)
-- [Copyright and License](#copyright-and-license)
-
-
-## Quick Start
+## Getting started
 ### To run locally:
 ```
 git clone https://github.com/bhargavgandhi/reactnd-project-myreads-starter.git
