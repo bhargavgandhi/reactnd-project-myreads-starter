@@ -1,10 +1,9 @@
 # reactnd-project-myreads
-
-This is a myreads website project for [Udacity’s React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019). The bookshelf app allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that it should be persisted information as user’s interacts with the application.
+This is myreads project from Udacity, I have added my files/functions to the project.
 
 ## Table of contents
-- [Quick Start](#quick-start)
-- [Demo](#demo)
+- [Getting Started](#getting-started)
+- [Live Demo](#demo)
 - [Documentation](#documentation)
 - [Copyright and License](#copyright-and-license)
 
@@ -23,7 +22,7 @@ Check out the live demo here  [https://bhargavgandhi.github.io/reactnd-project-m
 
 ## Documentation
 ### What's included
-Within the download you'll find the following directories and files:
+Files you will find are below:
 ```
 ├── CONTRIBUTING.md
 ├── README.md - This file.
