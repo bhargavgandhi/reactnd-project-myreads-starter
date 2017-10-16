@@ -73,3 +73,7 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Copyright and License
 A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity.
+
+## Resources
+Search Icon has been provided by [simpleicon] (https://www.flaticon.com/authors/simpleicon)
+from website [flaticon] (https://www.flaticon.com/) and is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
